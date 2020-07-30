@@ -10,6 +10,9 @@ import { DataManager, WebApiAdaptor } from '@syncfusion/ej2-data';
 
 class Calendar extends React.Component {
 
+    componentDidMount(){
+        //if(!user) this.props.history('/login');
+    }
     localData =  {
         dataSource: [{
             EndTime: new Date(2020, 6, 30, 6, 30),
