@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import './App.css';
+import './App.scss';
 
 import Login from './views/login/login.jsx';
 import Header from './components/header/header.jsx';
