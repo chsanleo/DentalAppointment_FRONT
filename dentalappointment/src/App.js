@@ -7,6 +7,8 @@ import Login from './views/login/login.jsx';
 import Header from './components/header/header.jsx';
 import Footer from './components/footer/footer.jsx';
 import Calendar from './components/calendar/calendar.jsx';
+import Page404 from './views/404/404.jsx';
+import AboutUs from './views/about/about.jsx'
 
 
 function App() {
@@ -16,8 +18,10 @@ function App() {
       <Switch>
         <Route path="/login" exact component={Login} />
         <Route path="/" exact component={Calendar} />
+        <Route path="/about" exact component={AboutUs}/>
+          <Route component={Page404} />
       </Switch>
-      <Footer />
+        <Footer />
     </Router>
   );
 }
