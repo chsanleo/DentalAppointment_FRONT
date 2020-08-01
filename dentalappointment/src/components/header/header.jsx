@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 class Header extends React.Component {
     constructor(props) {
@@ -38,4 +39,5 @@ class Header extends React.Component {
         );
     }
 }
-export default Header;
+const mapStateToProps = ({ users }) => ({ user: users?.user })
+export default connect(mapStateToProps)(Header);
