@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { NavLink } from 'react-router-dom';
 import { userService } from '../../services/userService.js';
 
 class Login extends React.Component {
@@ -25,8 +25,8 @@ class Login extends React.Component {
             password: this.state.password
         };
 
-        try { 
-            userService.loginServ(credentials);
+        try {
+            userService.login(credentials);
             setTimeout(() => {
                 this.props.history.push('/');
             }, 2000);
@@ -36,11 +36,10 @@ class Login extends React.Component {
             return;
         }
     }
-
     render() {
         return (
-            <form onSubmit={this.pressLogin} className="fondo">
-                <div className="login">
+            <div>
+                <form onSubmit={this.pressLogin}>
                     <h3>Login</h3>
                     <span>{this.state.msgError}</span>
                     <input className="inputs" type="text" placeholder="numExpedient" name="numExpedient"
@@ -48,8 +47,10 @@ class Login extends React.Component {
                     <input className="inputs" type="password" placeholder="password" name="password"
                         value={this.state.password} onChange={this.handleChange}></input>
                     <button type="submit">LogIn!</button>
-                </div>
-            </form>
+                </form>
+                <NavLink to="/access">Ask for ur Access</NavLink>
+                <NavLink to="/forgotPass">I forgot my password</NavLink>
+            </div>
         )
     }
 }
