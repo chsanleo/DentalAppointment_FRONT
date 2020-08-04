@@ -2,6 +2,8 @@ import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import './header.scss';
+
 class Header extends React.Component {
     constructor(props) {
         super(props);
