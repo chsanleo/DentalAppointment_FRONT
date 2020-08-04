@@ -1,0 +1,21 @@
+footer{
+    height: 11em;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+    display: grid;
+    .footer-contact{
+        grid-column: 1;
+        padding-left: 30%;
+        padding-bottom: 1em;
+    }
+    .footer-links{
+        grid-column: 2;
+        padding-bottom: 1em;
+    }
+}
