@@ -1,0 +1,39 @@
+.login {
+	top: 25%;
+	margin-left: auto;
+ 	margin-right: auto;
+    width: 300px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+button {
+    width: 100px;
+    border-radius: 24px; 
+    text-align: center; 
+    padding: 1em;
+    margin-top: 1em; 
+    background-color: var(--secondary-color); 
+    color: #fff; 
+    font-size: 14px;
+    margin-left: auto; 
+    border: none;
+}
+
+input {
+    font-size: 16px; 
+    padding: 20px 0px; 
+    border: none; 
+    border-bottom: solid 1px var(--textDiscret-color);   
+    width: 280px; 
+}
+
+a {
+    text-decoration: none;
+    color: var(--textDiscret-color); 
+    font-size: 14px; 
+    margin-top: 2em; 
+  }
