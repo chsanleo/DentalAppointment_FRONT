@@ -27,14 +27,13 @@ class Header extends React.Component {
                                 <Link to="/profile">Profile</Link>
                                 <Link to="/logOut">Logout</Link>
                             </li>
-                            :
-                            <li>
-                                <Link to="/login">Login</Link>
-                                <Link to="/askAcces">Ask for Access</Link>
-                            </li>
-                        }
-                    </ul>
-                </div>
+                        :
+                        <li>
+                            <Link to="/login">Login</Link>
+                            <Link to="/access">Ask for ur Access</Link>
+                        </li>
+                    }
+                </ul>
             </header>
         );
     }
