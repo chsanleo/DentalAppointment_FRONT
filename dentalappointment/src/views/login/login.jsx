@@ -2,6 +2,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { userService } from '../../services/userService.js';
 
+import './login.scss';
+
 class Login extends React.Component {
     constructor(props) {
         super(props);
@@ -38,18 +40,18 @@ class Login extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className="login">
                 <form onSubmit={this.pressLogin}>
-                    <h3>Login</h3>
+                    <h2>Login</h2>
                     <span>{this.state.msgError}</span>
-                    <input className="inputs" type="text" placeholder="numExpedient" name="numExpedient"
+                    <input className="inputs" type="text" placeholder="Expedient Number" name="numExpedient"
                         value={this.state.numExpedient} onChange={this.handleChange}></input>
-                    <input className="inputs" type="password" placeholder="password" name="password"
-                        value={this.state.password} onChange={this.handleChange}></input>
+                    <input className="inputs" type="password" placeholder="Password" name="password"
+                        value={this.state.password} onChange={this.handleChange}></input><br/>
+                    <NavLink to="/forgotPass">I forgot my password</NavLink>
+                    <br />
                     <button type="submit">LogIn!</button>
                 </form>
-                <NavLink to="/access">Ask for ur Access</NavLink>
-                <NavLink to="/forgotPass">I forgot my password</NavLink>
             </div>
         )
     }
