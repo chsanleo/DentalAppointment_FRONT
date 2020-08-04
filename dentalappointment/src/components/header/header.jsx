@@ -26,11 +26,11 @@ class Header extends React.Component {
                         ?
                         <li>
                             <Link to="/profile">Profile</Link>
-                            <Link to="/logOut">Logout</Link>
+                            <Link to="/logOut"><img src="./logOut.png" alt="logOut"/></Link>
                         </li>
                         :
                         <li>
-                            <Link to="/login">Login</Link>
+                            <Link to="/login"><img src="./logIn.png" alt="logIn"/></Link>
                             <Link to="/access">Ask for ur Access</Link>
                         </li>
                     }
