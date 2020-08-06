@@ -1,33 +1,13 @@
 import axios from 'axios';
 
 export const userRepository = {
-    login, getProfile, updateUser,
-    deleteUser, signup
+    getProfile, createDoctor,
+    updateDoctor, deleteDoctor
 };
 
-async function login(credentials) {
-    try {
-        const res = await axios.post(`api/auth/login`, credentials);
-        console.log(res)
-        return res.data;
-    }
-    catch (error) {
-        throw Error("Could not log in.");
-    }
-};
-async function signup(email) {
-    try {
-        const res = await axios.post(`api/auth/signup`, email);
-        console.log(res)
-        return res.data;
-    }
-    catch (error) {
-        throw Error("Could not log in.");
-    }
-};
 async function getProfile(userId) {
     try {
-        const res = await axios.get(`api/user/` + userId);
+        const res = await axios.get(`api/doctor/` + userId);
         console.log(res)
         return res.data;
     }
@@ -35,9 +15,9 @@ async function getProfile(userId) {
         throw Error("Could not log in.");
     }
 };
-async function updateUser(user) {
+async function createDoctor(user) {
     try {
-        const res = await axios.put(`api/user/` + user.userId, user);
+        const res = await axios.post(`api/doctor/`, user);
         console.log(res)
         return res.data;
     }
@@ -45,7 +25,17 @@ async function updateUser(user) {
         throw Error("Could not log in.");
     }
 };
-async function deleteUser(userId) {
+async function updateDoctor(user) {
+    try {
+        const res = await axios.put(`api/doctor/` + user.userId, user);
+        console.log(res)
+        return res.data;
+    }
+    catch (error) {
+        throw Error("Could not log in.");
+    }
+};
+async function deleteDoctor(userId) {
     try {
         const res = await axios.delete(`api/user/` + userId);
         console.log(res)
