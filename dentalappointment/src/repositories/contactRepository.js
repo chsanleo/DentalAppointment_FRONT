@@ -28,7 +28,7 @@ async function getContactUs(id) {
 };
 async function createContactUs(contactMail) {
     try {
-        const res = await axios.post(`api/contact/`,);
+        const res = await axios.post(`api/contact/`,contactMail);
         console.log(res)
         return res.data;
     }
