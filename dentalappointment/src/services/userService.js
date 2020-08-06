@@ -21,5 +21,4 @@ function askNumExp (email){
     userRepository.askNumExp(email)
     .then()
     .catch(error => console.log(error));
-
 };

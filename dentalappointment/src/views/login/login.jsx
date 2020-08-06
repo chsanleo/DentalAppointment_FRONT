@@ -19,6 +19,10 @@ class Login extends React.Component {
         this.setState({ [ev.target.name]: ev.target.type === 'string' ? +ev.target.value : ev.target.value });
     }
 
+    componentDidMount(){
+        //if user move to /agenda
+    }
+
     pressLogin = (ev) => {
         ev.preventDefault();
 
@@ -30,7 +34,7 @@ class Login extends React.Component {
         try {
             userService.login(credentials);
             setTimeout(() => {
-                this.props.history.push('/');
+                this.props.history.push('/agenda');
             }, 2000);
 
         } catch (error) {
