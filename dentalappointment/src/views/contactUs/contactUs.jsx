@@ -1,5 +1,7 @@
 import React from 'react';
 
+import {contactService} from '../../services/contactService.js';
+
 class ContactUs extends React.Component {
     constructor(props) {
         super(props);
@@ -29,9 +31,9 @@ class ContactUs extends React.Component {
             subject: this.state.subject,
             email: this.state.email
         }
-
+//validar
         try {
-            //contactMsgService.setContactMessage(contactMsg);
+            contactService.createContactMail(contactMsg);
         } catch (error) {
             console.log(error);
         }
