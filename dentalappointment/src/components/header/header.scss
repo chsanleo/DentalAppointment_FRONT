@@ -1,0 +1,26 @@
+header {
+    height: 5em;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-color);
+
+    .logo {
+        height: 5em;
+        padding-left: 1em;
+    }
+    ul {
+        list-style:none;
+        li {
+           position: fixed;
+           top:0;
+           right: 0;
+           padding-bottom: 1em; 
+           padding-right: 2em;
+          
+           img{
+            height: 5em;
+           }
+        }
+    }
+}

@@ -2,6 +2,8 @@ import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import './header.scss';
+
 class Header extends React.Component {
     constructor(props) {
         super(props);
@@ -15,26 +17,24 @@ class Header extends React.Component {
             <header>
                 <div>
                     <NavLink exact to="/">
-                        <img src="" alt="logo" />
+                        <img src="./logoDental.png" className="logo" alt="logo" />
                     </NavLink>
                 </div>
 
-                <div>
-                    <ul>
-                        {this.props.user?.id
-                            ?
-                            <li>
-                                <Link to="/profile">Profile</Link>
-                                <Link to="/logOut">Logout</Link>
-                            </li>
-                            :
-                            <li>
-                                <Link to="/login">Login</Link>
-                                <Link to="/askAcces">Ask for Access</Link>
-                            </li>
-                        }
-                    </ul>
-                </div>
+                <ul>
+                    {this.props.user?.id
+                        ?
+                        <li>
+                            <Link to="/profile">Profile</Link>
+                            <Link to="/logOut"><img src="./logOut.png" alt="logOut"/></Link>
+                        </li>
+                        :
+                        <li>
+                            <Link to="/login"><img src="./logIn.png" alt="logIn"/></Link>
+                            <Link to="/access">Ask for ur Access</Link>
+                        </li>
+                    }
+                </ul>
             </header>
         );
     }
