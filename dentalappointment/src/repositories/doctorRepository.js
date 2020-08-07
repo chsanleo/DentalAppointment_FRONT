@@ -7,7 +7,7 @@ export const userRepository = {
 
 async function getProfile(userId) {
     try {
-        const res = await axios.get(`api/doctor/` + userId);
+        const res = await axios.get(`api/user/` + userId);
         console.log(res)
         return res.data;
     }
