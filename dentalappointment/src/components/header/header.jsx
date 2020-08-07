@@ -30,7 +30,7 @@ class Header extends React.Component {
                         </li>
                         :
                         <li>
-                            <Link to="/login"><img src="./logIn.png" alt="logIn" title="Log In"/></Link>
+                            <Link to="/"><img src="./logIn.png" alt="logIn" title="Log In"/></Link>
                             <Link to="/access"><img src="./access.png" alt="Ask Access Credentials"  title="Require ur Access"/></Link>
                         </li>
                     }
