@@ -22,7 +22,7 @@ async function signup(email) {
         return res.data;
     }
     catch (error) {
-        throw Error("Could not log in.");
+        throw Error("Problem signUp");
     }
 };
 async function getProfile(userId) {
@@ -32,7 +32,7 @@ async function getProfile(userId) {
         return res.data;
     }
     catch (error) {
-        throw Error("Could not log in.");
+        throw Error("Problem Profile.");
     }
 };
 async function updateUser(user) {
@@ -42,7 +42,7 @@ async function updateUser(user) {
         return res.data;
     }
     catch (error) {
-        throw Error("Could not log in.");
+        throw Error("problem update.");
     }
 };
 async function deleteUser(userId) {
