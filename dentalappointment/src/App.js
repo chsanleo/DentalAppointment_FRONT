@@ -11,6 +11,7 @@ import Page404 from './views/404/404.jsx';
 import AboutUs from './views/about/about.jsx'
 import AskExp from './views/askExp/askExp.jsx';
 import ContactMail from './views/contactUs/contactUs.jsx';
+import ForgotPass from './views/forgotPass/forgotPass.jsx';
 
 function App() {
   return (
@@ -19,13 +20,14 @@ function App() {
       <Switch>
         <Route path='/' exact component={Login} />
         <Route path='/agenda' exact component={Calendar} />
-        <Route path='/about' exact component={AboutUs}/>
-        <Route path='/access' exact component={AskExp}/>
-        <Route path='/contactMail' exact component={ContactMail}/>
-
-          <Route component={Page404} />
+        <Route path='/about' exact component={AboutUs} />
+        <Route path='/access' exact component={AskExp} />
+        <Route path='/contactMail' exact component={ContactMail} />
+        <Route path='/forgotPass' exact component={ForgotPass} />
+        
+        <Route component={Page404} />
       </Switch>
-        <Footer />
+      <Footer />
     </Router>
   );
 }
