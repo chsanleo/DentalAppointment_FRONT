@@ -12,7 +12,7 @@ class ErrorPage extends React.Component {
     componentDidMount() {
         setTimeout(() => {
             this.setState({ redirect: true });
-        }, 6000);
+        }, 4000);
     }
     render() {
         if (this.state.redirect) {
