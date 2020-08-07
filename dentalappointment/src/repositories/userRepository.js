@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const userRepository = {
     login, getProfile, updateUser,
-    deleteUser, signup
+    deleteUser, signup, forgotPass
 };
 
 async function login(credentials) {
@@ -52,6 +52,17 @@ async function deleteUser(userId) {
         return res.data;
     }
     catch (error) {
-        throw Error("Could not log in.");
+        throw Error("problem delete.");
     }
 };
+
+async function forgotPass(identification){
+    try {
+        const res = await axios.post(`api/auth/forgot`,identification );
+        console.log(res)
+        return res.data;
+    }
+    catch (error) {
+        throw Error("Problem identification");
+    }
+}
