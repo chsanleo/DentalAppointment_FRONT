@@ -2,6 +2,7 @@
 
 #config files
 /src/config/API.js
+/src/config/properties.js
 
 # dependencies
 /node_modules
