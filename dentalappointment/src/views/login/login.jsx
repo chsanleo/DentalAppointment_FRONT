@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { userService } from '../../services/userService.js';
+import { validations } from '../../utils/validations.js';
+import { utils } from '../../utils/utils.js';
 
 import './login.scss';
 
@@ -30,6 +32,12 @@ class Login extends React.Component {
             numExpedient: this.state.numExpedient,
             password: this.state.password
         };
+
+        let error = validations.validateCredentials(credentials);
+        if (!utils.isNullOrEmpty(error)) {
+            this.setState({ msgError: error });
+            return;
+        }
 
         try {
             userService.login(credentials);
