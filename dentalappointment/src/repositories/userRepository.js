@@ -37,7 +37,7 @@ async function getProfile(userId) {
 };
 async function updateUser(user) {
     try {
-        const res = await axios.put(`api/user/` + user.userId, user);
+        const res = await axios.put(`api/user/`, user);
         console.log(res)
         return res.data;
     }
