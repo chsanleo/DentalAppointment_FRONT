@@ -41,7 +41,7 @@ class Login extends React.Component {
             <div className="centerInfo">
                 <form onSubmit={this.pressRegister}>
                     <h3>Ask for your Expedient number</h3>
-                    <span>{this.state.msgError}</span>
+                    <span className="errorText">{this.state.msgError}</span>
                     <input type="text" placeholder="email" name="email"
                         value={this.state.email} onChange={this.handleChange}></input>
                     <button type="submit">Ask for ur Access!</button>
