@@ -44,7 +44,7 @@ function validateEmail(email) {
     return error;
 };
 
-function validateUser(user, password2) {
+function validateUser(user) {
     let error = utils.EMPTY();
 
     if (utils.isNullOrEmpty(user.name) || user.name.length < PROPERTIES.MIN_CHAR_NAME) {
@@ -57,15 +57,6 @@ function validateUser(user, password2) {
         error += ' Adress must be provided. '
     }
     error += this.validateEmail(user.email);
-
-    if (!utils.isNullOrEmpty(user.password) && !utils.isNullOrEmpty(password2)) {
-        if (user.password.length !== properties.MAX_PASSWORD_LENGTH ||
-            password2.length !== properties.MAX_PASSWORD_LENGTH) {
-            error += ' Numer of character of passwords is incorrect ';
-        }
-        else if (user.password !== password2) { error += ' Both passwords must coincide'; }
-    }
-    else { error += ' Both passwords must be provided. '; }
 
     return error;
 }
