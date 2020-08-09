@@ -26,7 +26,11 @@ class Login extends React.Component {
             return;
         }
 
-        userService.askNumExp(this.state.email);
+        let askEmail = {
+            email: this.state.email
+        };
+
+        userService.askNumExp(askEmail);
         setTimeout(() => {
             this.props.history.push('/');
         }, 2000);
