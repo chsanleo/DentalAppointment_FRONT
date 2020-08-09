@@ -1,5 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
+
 import { userService } from '../../services/userService.js';
 import { validations } from '../../utils/validations.js';
 import { utils } from '../../utils/utils.js';
@@ -11,32 +13,39 @@ class Profile extends React.Component {
         super(props);
 
         this.state = {
-            numExpedient: '',
-            name:'',
-            surname:'',
-            address:'',
-            email:'',
-            password: '',
+            numExp: '',
+            name: '',
+            surname: '',
+            address: '',
+            email: '',
             msgError: ''
         }
+        this.handleChange = this.handleChange.bind(this);
     }
 
     handleChange = (ev) => {
         this.setState({ [ev.target.name]: ev.target.type === 'string' ? +ev.target.value : ev.target.value });
     }
 
-    componentDidMount(){
-        //refill the this.numExpedient & password with user data
+    componentDidMount() {
+        this.setState({
+            numExp: this.props.user.numExp,
+            name: this.props.user.name,
+            surname: this.props.user.surname,
+            address: this.props.user.address,
+            email: this.props.user.email
+        });
     }
+
     pressLogin = (ev) => {
         ev.preventDefault();
 
         let user = {
-            name:this.state.name,
-            surname:this.state.surname,
-            address:this.state.address,
-            email:this.state.email,
-            numExpedient: this.state.numExpedient,//no change
+            name: this.state.name,
+            surname: this.state.surname,
+            address: this.state.address,
+            email: this.state.email,
+            numExp: this.state.numExp//no change
         };
 
         let error = validations.validateUser(user);
@@ -53,7 +62,6 @@ class Profile extends React.Component {
 
         } catch (error) {
             console.log(error);
-            return;
         }
     }
     render() {
@@ -61,22 +69,22 @@ class Profile extends React.Component {
             <div className="centerInfo">
                 <form onSubmit={this.pressUpdate}>
                     <h2>Personal information</h2>
-                    <span>{this.state.msgError}</span>
-                    <label className="delicated">Expedient Number</label>
-                    <span>{this.state.numExpedient}</span><br />
+                    <span className="errorText">{this.state.msgError}</span>
+                    <label className="delicated">Expedient Number</label><br />
+                    <span>{this.state.numExp|| ''}</span><br />
                     <label>Name</label>
-                    <input className="inputs" type="text" name="name" value={this.state.name} 
-                    onChange={this.handleChange}></input>
+                    <input className="inputs" type="text" name="name" value={this.state.name|| ''}
+                        onChange={this.handleChange}></input>
                     <label>Surname</label>
-                    <input className="inputs" type="text" name="surname" value={this.state.surname} 
-                    onChange={this.handleChange}></input><br />
+                    <input className="inputs" type="text" name="surname" value={this.state.surname|| ''}
+                        onChange={this.handleChange}></input><br />
                     <label>Address</label>
-                    <input className="inputs" type="text" name="address" value={this.state.adress} 
-                    onChange={this.handleChange}></input><br />
+                    <input className="inputs" type="text" name="address" value={this.state.address|| ''}
+                        onChange={this.handleChange}></input><br />
                     <label>Email</label>
-                    <input className="inputs" type="text" name="email" value={this.state.email} 
-                    onChange={this.handleChange}></input><br />
-                   <br />
+                    <input className="inputs" type="text" name="email" value={this.state.email|| ''}
+                        onChange={this.handleChange}></input><br />
+                    <br />
                     <button type="submit">Update profile!</button><br />
                     <NavLink to="/forgotPass">Change my password</NavLink>
                 </form>
@@ -84,4 +92,5 @@ class Profile extends React.Component {
         )
     }
 }
-export default Profile;
+const mapStateToProps = ({ users }) => ({ user: users?.user })
+export default connect(mapStateToProps)(Profile);
