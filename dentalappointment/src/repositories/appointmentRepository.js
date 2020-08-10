@@ -1,61 +1,76 @@
 import axios from 'axios';
 
-export const userRepository = {
-    getAll, getAppointment, createAppointment,updateAppointment,
-    deleteAppointment
+export const appointmentRepository = {
+    getAll, getAppointment, createAppointment, updateAppointment,
+    deleteAppointment, getAllFree, getAppointmentByUser
 };
 
-async function getAll(credentials) {
+async function getAll() {
     try {
         const res = await axios.get(`api/appointment`);
-        console.log(res)
         return res.data;
     }
     catch (error) {
-        throw Error("Could not log in.");
+        throw Error("Could not get appt.");
+    }
+};
+
+async function getAllFree() {
+    try {
+        const res = await axios.get(`api/appointment/choose`);
+        return res.data;
+    }
+    catch (error) {
+        throw Error("Could not get appt.");
     }
 };
 
 async function getAppointment(appointmentId) {
     try {
         const res = await axios.get(`api/appointment/` + appointmentId);
-        console.log(res)
         return res.data;
     }
     catch (error) {
-        throw Error("Could not log in.");
+        throw Error("Could not get appt.");
+    }
+};
+
+async function getAppointmentByUser(userExp) {
+    try {
+        const res = await axios.post(`api/appointment/user`, userExp);
+        return res.data;
+    }
+    catch (error) {
+        throw Error("Could not get appt.");
     }
 };
 
 async function createAppointment(appointment) {
     try {
-        const res = await axios.post(`api/appointment`,appointment);
-        console.log(res)
+        const res = await axios.post(`api/appointment`, appointment);
         return res.data;
     }
     catch (error) {
-        throw Error("Could not log in.");
+        throw Error("Could not get appt.");
     }
 };
 
 async function updateAppointment(appointment) {
     try {
-        const res = await axios.put(`api/appointment/` + appointment.id, appointment);
-        console.log(res)
+        const res = await axios.post(`api/appointment/update`, appointment);
         return res.data;
     }
     catch (error) {
-        throw Error("Could not log in.");
+        throw Error("Could not get appt.");
     }
 };
 
 async function deleteAppointment(appointmentId) {
     try {
         const res = await axios.put(`api/appointment/` + appointmentId);
-        console.log(res)
         return res.data;
     }
     catch (error) {
-        throw Error("Could not log in.");
+        throw Error("Could not get appt.");
     }
 };
