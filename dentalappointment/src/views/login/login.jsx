@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { userService } from '../../services/userService.js';
+
 import { validations } from '../../utils/validations.js';
 import { utils } from '../../utils/utils.js';
 
@@ -20,11 +21,7 @@ class Login extends React.Component {
     handleChange = (ev) => {
         this.setState({ [ev.target.name]: ev.target.type === 'string' ? +ev.target.value : ev.target.value });
     }
-
-    componentDidMount() {
-        //if user move to /agenda
-    }
-
+    
     pressLogin = (ev) => {
         ev.preventDefault();
 
