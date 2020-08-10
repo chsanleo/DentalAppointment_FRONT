@@ -8,7 +8,6 @@ export const contactRepository = {
 async function getAllContactUs() {
     try {
         const res = await axios.get(`api/contact/getAll`);
-        console.log(res)
         return res.data;
     }
     catch (error) {
@@ -19,7 +18,6 @@ async function getAllContactUs() {
 async function getContactUs(id) {
     try {
         const res = await axios.get(`api/contact/get` + id);
-        console.log(res)
         return res.data;
     }
     catch (error) {
@@ -29,7 +27,6 @@ async function getContactUs(id) {
 async function createContactUs(contactMail) {
     try {
         const res = await axios.post(`api/contact/`,contactMail);
-        console.log(res)
         return res.data;
     }
     catch (error) {
@@ -39,7 +36,6 @@ async function createContactUs(contactMail) {
 async function updateContactUs(id) {
     try {
         const res = await axios.get(`api/contact/update/` + id);
-        console.log(res)
         return res.data;
     }
     catch (error) {
