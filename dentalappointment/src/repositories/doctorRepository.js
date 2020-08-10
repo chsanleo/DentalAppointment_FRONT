@@ -8,7 +8,6 @@ export const userRepository = {
 async function getProfile(userId) {
     try {
         const res = await axios.get(`api/user/` + userId);
-        console.log(res)
         return res.data;
     }
     catch (error) {
@@ -18,7 +17,6 @@ async function getProfile(userId) {
 async function createDoctor(user) {
     try {
         const res = await axios.post(`api/doctor/`, user);
-        console.log(res)
         return res.data;
     }
     catch (error) {
@@ -28,7 +26,6 @@ async function createDoctor(user) {
 async function updateDoctor(user) {
     try {
         const res = await axios.put(`api/doctor/` + user.userId, user);
-        console.log(res)
         return res.data;
     }
     catch (error) {
@@ -38,7 +35,6 @@ async function updateDoctor(user) {
 async function deleteDoctor(userId) {
     try {
         const res = await axios.delete(`api/user/` + userId);
-        console.log(res)
         return res.data;
     }
     catch (error) {
