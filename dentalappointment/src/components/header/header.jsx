@@ -25,9 +25,9 @@ class Header extends React.Component {
                     {this.props.user?.id
                         ?
                         <li>
-                            <Link to="/profile">Profile</Link>
-                            <Link to="/agenda">Agenda</Link>
-                            <Link to="/logOut"><img src="./logOut.png" alt="logOut"/></Link>
+                            <Link to="/profile"><img src="./profile.png" alt="profile" title="profile"/></Link>
+                            <Link to="/agenda"><img src="./agenda.png" alt="agenda" title="agenda"/></Link>
+                            <Link to="/logout"><img src="./logOut.png" alt="logOut" title="logOut"/></Link>
                         </li>
                         :
                         <li>
