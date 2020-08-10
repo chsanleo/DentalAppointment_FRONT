@@ -1,8 +1,10 @@
 import { appointmentRepository } from '../repositories/appointmentRepository.js';
+import { addAppointmentUser,addFreeAppointmentList } from '../redux/actions/appointment.js';
+
 
 export const appointmentService = {
     getAll, getAppointment, createAppointment, updateAppointment,
-    deleteAppointment
+    deleteAppointment, getAllFree, getAppointmentByUser
 };
 
 function getAll() {
@@ -11,9 +13,23 @@ function getAll() {
         .catch(error => console.log(error));
 };
 
+function getAllFree() {
+    appointmentRepository.getAllFree()
+        .then(res => { 
+            addFreeAppointmentList(res)
+        })
+        .catch(error => console.log(error));
+};
+
 function getAppointment(appointmentId) {
     appointmentRepository.getAppointment(appointmentId)
         .then(res => { })
+        .catch(error => console.log(error));
+};
+
+function getAppointmentByUser(userExp) {
+    appointmentRepository.getAppointmentByUser(userExp)
+        .then(res => {addAppointmentUser(res) })
         .catch(error => console.log(error));
 };
 
