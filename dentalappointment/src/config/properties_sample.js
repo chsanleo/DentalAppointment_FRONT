@@ -1,0 +1,8 @@
+const PROPERTIES = {
+    MAX_PASSWORD_LENGTH : 1,
+    MIN_CHAR_NAME: 1,
+    MIN_CHAR_ADDRESS: 1,
+    MIN_CHAR_SURNAME: 1
+}
+
+module.exports = PROPERTIES;
