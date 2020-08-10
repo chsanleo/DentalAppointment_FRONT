@@ -29,7 +29,7 @@ class Login extends React.Component {
         ev.preventDefault();
 
         let credentials = {
-            numExpedient: this.state.numExpedient,
+            numExp: this.state.numExpedient,
             password: this.state.password
         };
 
