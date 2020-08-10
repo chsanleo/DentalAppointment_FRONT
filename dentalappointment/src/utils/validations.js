@@ -35,10 +35,10 @@ function validateCredentials(credentials) {
 
 function validateEmail(email) {
     let error = utils.EMPTY();
-    let regExp = '/^[a-zA-Z0-9]+@+[a-zA-Z0-9]+.+[A-z]/';
+    //let regExp = '/^[a-zA-Z0-9]+@+[a-zA-Z0-9]+.+[A-z]/';
 
-    if (!utils.isEmpty(email)) {
-        if (!regExp.test((email).val())) { error += 'Email must have a correct format "xxx@xx.xx" '; }
+    if (!utils.isNullOrEmpty(email)) {
+    //    if (!regExp.test((email))) { error += 'Email must have a correct format "xxx@xx.xx" '; }
     } else { error += 'Email must be provided.'; }
 
     return error;
