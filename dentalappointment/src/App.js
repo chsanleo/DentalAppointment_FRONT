@@ -13,6 +13,7 @@ import AskExp from './views/askExp/askExp.jsx';
 import ContactMail from './views/contactUs/contactUs.jsx';
 import ForgotPass from './views/forgotPass/forgotPass.jsx';
 import Profile from './views/profile/profile.jsx';
+import Logout from './views/logout/logout.jsx';
 
 function App() {
   return (
@@ -26,7 +27,8 @@ function App() {
         <Route path='/contactMail' exact component={ContactMail} />
         <Route path='/forgotPass' exact component={ForgotPass} />
         <Route path='/profile' exact component={Profile} />
-        
+        <Route path='/logout' exact component={Logout} />
+
         <Route component={Page404} />
       </Switch>
       <Footer />
