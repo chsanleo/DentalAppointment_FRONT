@@ -1,68 +1,96 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# FrontEnd, DentalAppointment
+![badge](https://img.shields.io/badge/working-active-brig)
 
-## Available Scripts
+FrontEnd proposed as an exercise to work with React connected to a previous develop BackEnd using an API. Also have a database where we storage the information about the correct behaviour of the application. In this application we need to complete the necessary methods to manage the users and manage the appointments.
 
-In the project directory, you can run:
+The data is storage in a SQL database.
 
-### `npm start`
+In this part of the project we investigate different webpages relatives to that theme and we arrived to our solution. 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## How to Start 🚀
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
++ To use all our solution the best is clone our back first: 
+```
+ $ git clone https://github.com/chsanleo/DentalAppointment_BACK
+```
 
-### `npm test`
++ and install the packages,
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+$ composer install
+```
 
-### `npm run build`
++ run the migrations to create the database
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+$ php artisan migrate
+```
+ 
++ take a look to the /config/ files, where u need to take the samples and create ur own config files
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
++ clone the front repository
+```
+$ git clone https://github.com/chsanleo/DentalAppointment_FRONT
+```
++ run both, back and front in the source folder
+```
+$ npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
++ and... WORK!.
 
-### `npm run eject`
+## Project status
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+>Is not finish and we are working adding more features and improvements on it, also fixing some small details ;). 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Current Features 📄
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
++ Register users by asking for a credentials, this you gonna receive in ur mail.
++ Login and Log Out.
++ Accces to the profile of a current user.
++ Choose a free appoinment and in the case you did not complete ur user information the the app will redirect you to complete your personal information.
++ Change the appointment.
++ Recovery in your mail directly a new password.
++ Use of Redux to the management of the data.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Roadmap 📋
 
-## Learn More
+**About the front**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
++ Finish the management of appointment, with a history.
++ Create a Administration panel to use with the administration role.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+**About features**
++ Add some features to use by the doctors.
++ Ask for a specific date to the system.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Test the application ⚙️
 
-### Analyzing the Bundle Size
+Turn on the server.
+```
+$ npm start
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Use the browser of your choice and surf to http://localhost:3000/ to enter and with the developer tools u can start.
 
-### Making a Progressive Web App
+![devtools](https://www.formacionprofesional.info/wp-content/uploads/2015/09/herramientas_desarrollo_iexplorer11.png)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+Because we are using redux is a good idea also install the [redux develop tools](https://github.com/reduxjs/redux-devtools)
 
-### Advanced Configuration
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+## Contributors ✒️
 
-### Deployment
+* **Christian Sanchez Leon** - [chsanleo](https://github.com/chsanleo)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+## License 📄
+[![CC0](https://licensebuttons.net/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
 
-### `npm run build` fails to minify
+Ask us before use. Feedback is welcome!. 
+If u need more documentation or have any doubts about the code don't hesitiate to contact us.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## How to say 'thanks' to us  🎁
+
+* Tell others about this project 📢
+* Pay a beer 🍺 or coffee ☕ to us (or two, or... some ;) some snacks also recomendable ). 
+* Comments about always welcome!.
