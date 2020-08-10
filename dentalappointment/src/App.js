@@ -14,6 +14,7 @@ import ForgotPass from './views/forgotPass/forgotPass.jsx';
 import Profile from './views/profile/profile.jsx';
 import Logout from './views/logout/logout.jsx';
 import Agenda from './components/agenda/agenda.jsx';
+import PrivatePolicy from './views/privatePolicy/privatePolicy.jsx';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path='/profile' exact component={Profile} />
         <Route path='/logout' exact component={Logout} />
         <Route path='/agenda' exact component={Agenda} />
+        <Route path='/private' exact component={PrivatePolicy} />
 
         <Route component={Page404} />
       </Switch>
