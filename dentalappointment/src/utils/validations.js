@@ -12,7 +12,7 @@ function validateIdentification(identification) {
 
     let error = utils.EMPTY();
     
-    if (utils.isEmpty(identification.numExpedient)) { error += 'Expedient must be provided '; }
+    if (utils.isNullOrEmpty(identification.numExpedient)) { error += 'Expedient must be provided '; }
     error += validateEmail(identification.email);
 
     return error;
@@ -22,9 +22,9 @@ function validateCredentials(credentials) {
 
     let error = utils.EMPTY();
 
-    if (utils.isEmpty(credentials.numExpedient)) { error += ' Expedient must be provided '; }
+    if (utils.isNullOrEmpty(credentials.numExp)) { error += ' Expedient must be provided '; }
 
-    if (!utils.isEmpty(credentials.password)) {
+    if (!utils.isNullOrEmpty(credentials.password)) {
         if (credentials.password.length !== properties.MAX_PASSWORD_LENGTH) {
             error += ' Numer of character of the password is incorrect ';
         }
