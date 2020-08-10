@@ -43,7 +43,7 @@ class Login extends React.Component {
             userService.login(credentials);
             setTimeout(() => {
                 this.props.history.push('/agenda');
-            }, 2000);
+            }, 500);
 
         } catch (error) {
             console.log(error);
