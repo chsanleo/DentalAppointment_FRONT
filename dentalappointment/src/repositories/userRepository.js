@@ -8,7 +8,6 @@ export const userRepository = {
 async function login(credentials) {
     try {
         const res = await axios.post(`api/auth/login`, credentials);
-        console.log(res)
         return res.data;
     }
     catch (error) {
@@ -18,7 +17,6 @@ async function login(credentials) {
 async function signup(email) {
     try {
         const res = await axios.post(`api/auth/signup`, email);
-        console.log(res);
         return res.data;
     }
     catch (error) {
@@ -28,7 +26,6 @@ async function signup(email) {
 async function getProfile(userId) {
     try {
         const res = await axios.get(`api/user/` + userId);
-        console.log(res)
         return res.data;
     }
     catch (error) {
@@ -38,7 +35,6 @@ async function getProfile(userId) {
 async function updateUser(user) {
     try {
         const res = await axios.post(`api/user/`, user);
-        console.log(res)
         return res.data;
     }
     catch (error) {
@@ -48,7 +44,6 @@ async function updateUser(user) {
 async function deleteUser(userId) {
     try {
         const res = await axios.delete(`api/user/` + userId);
-        console.log(res)
         return res.data;
     }
     catch (error) {
@@ -59,7 +54,6 @@ async function deleteUser(userId) {
 async function forgotPass(identification){
     try {
         const res = await axios.post(`api/auth/forgot`,identification );
-        console.log(res)
         return res.data;
     }
     catch (error) {
