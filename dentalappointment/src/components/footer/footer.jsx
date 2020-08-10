@@ -10,12 +10,12 @@ class Footer extends React.Component {
                 <div className="footer-contact">
                     <h4>Contact us</h4>
                     <p>111-111-1111</p>
-                    <Link to="/contactMail">Send us a mail</Link>
+                    <p><Link to="/contactMail">Send us a mail</Link></p>
                 </div>
                 <div className="footer-links">
                     <h4>For customers</h4>
-                    <Link to="/about">About us</Link>
-                    <p>Privacy policy</p>
+                    <p><Link to="/about">About us</Link></p>
+                    <p><Link to="/private">Privacy policy</Link></p>
                 </div>
             </footer>
         )
