@@ -12,7 +12,7 @@ function login(credentials) {
             localStorage.setItem('authToken', res.token);
             loginAction(res);
         })
-        .catch(error => console.log(error));
+        .catch(error => {throw new Error(error);});
 };
 
 function logout() {
@@ -35,7 +35,7 @@ function getProfile(userId) {
 function updateUser(user) {
     userRepository.updateUser(user)
         .then()
-        .catch(error => console.log(error));
+        .catch(error => {throw new Error(error);});
 };
 
 function deleteUser(userId) {

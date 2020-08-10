@@ -18,7 +18,7 @@ async function login(credentials) {
 async function signup(email) {
     try {
         const res = await axios.post(`api/auth/signup`, email);
-        console.log(res)
+        console.log(res);
         return res.data;
     }
     catch (error) {
@@ -37,7 +37,7 @@ async function getProfile(userId) {
 };
 async function updateUser(user) {
     try {
-        const res = await axios.put(`api/user/`, user);
+        const res = await axios.post(`api/user/`, user);
         console.log(res)
         return res.data;
     }

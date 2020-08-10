@@ -29,7 +29,7 @@ class Login extends React.Component {
         ev.preventDefault();
 
         let credentials = {
-            numExpedient: this.state.numExpedient,
+            numExp: this.state.numExpedient,
             password: this.state.password
         };
 
@@ -55,7 +55,7 @@ class Login extends React.Component {
             <div className="centerInfo">
                 <form onSubmit={this.pressLogin}>
                     <h2>Login</h2>
-                    <span>{this.state.msgError}</span>
+                    <span className="errorText">{this.state.msgError}</span>
                     <input className="inputs" type="text" placeholder="Expedient Number" name="numExpedient"
                         value={this.state.numExpedient} onChange={this.handleChange}></input>
                     <input className="inputs" type="password" placeholder="Password" name="password"

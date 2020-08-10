@@ -26,6 +26,7 @@ class Header extends React.Component {
                         ?
                         <li>
                             <Link to="/profile">Profile</Link>
+                            <Link to="/agenda">Agenda</Link>
                             <Link to="/logOut"><img src="./logOut.png" alt="logOut"/></Link>
                         </li>
                         :
